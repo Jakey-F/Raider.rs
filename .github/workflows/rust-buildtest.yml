@@ -11,13 +11,17 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.repository == 'outerspacedevs/Raider'
+    strategy:
+      matrix:
+        toolchain: [stable,beta,nightly]
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-    - name: Set up stable Rust environment
+    - name: Set up Rust toolchain (${{ matrix.toolchain }})
       uses: actions-rs/toolchain@v1
       with:
-        toolchain: stable
+        toolchain: ${{ matrix.toolchain }}
         override: true
         components: rustfmt, clippy
     - name: Cargo - Build
