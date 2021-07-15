@@ -1,6 +1,6 @@
 name: Rust lint using clippy
 on:
-  pull_request:
+  push:
     branches: [ dev ]
 
 env:
