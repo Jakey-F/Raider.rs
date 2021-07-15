@@ -11,7 +11,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.repository == 'outerspacedevs/Raider'
+    if: github.repository == 'outerspacedevs/Raiderrs'
     strategy:
       matrix:
         toolchain: [stable,beta,nightly]
