@@ -1,4 +1,4 @@
-name: Rust lint using clippy
+name: Rust - Clippy lint
 on:
   push:
     branches: [ dev ]
